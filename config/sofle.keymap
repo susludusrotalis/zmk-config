@@ -1,119 +1,89 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
+#include "../zmk-nodefree-config/international_chars/german.dtsi"
 
-/ {
-    // Activate ADJUST layer by pressing raise and lower
+/* layer and key shortcuts */
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+#define ___ &trans
 
-        adjust_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+#define DEF 0  // layer shortcuts, must match order in which they are defined below
+#define NUM 1
+#define NAV 2
 
-    combos {
-        compatible = "zmk,combos";
+/* custom behaviors */
 
-        Enter {
-            bindings = <&kp RETURN>;
-            key-positions = <46 47>;
-        };
+// homerow mods
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    bindings = <&kp>, <&kp>;
+)
 
-        Tab {
-            bindings = <&kp TAB>;
-            key-positions = <38 39>;
-        };
-    };
+// tap: sticky shift | double tap: capsword
+ZMK_BEHAVIOR(ss_cw, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sk LSHFT>, <&caps_word>;
+)
 
-    behaviors {
-        Browser_fwd: Browser_fwd {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BROWSER_FWD";
-            #binding-cells = <0>;
-            bindings = <&kp LC(TAB)>;
-        };
+// tap: backspace | shift + tap: delete | hold: num layer
+ZMK_BEHAVIOR(bs_del_num, mod_morph,
+    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
 
-        Browser_bwd: Browser_bwd {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BROWSER_BWD";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(TAB))>;
-        };
-    };
+// windows sleep macro
+ZMK_BEHAVIOR(win_sleep, macro,
+    wait-ms = <100>;
+    tap-ms = <5>;
+    bindings = <&kp LG(X) &kp U &kp S>;
+)
 
-    keymap {
-        compatible = "zmk,keymap";
+// euro sign
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
-        default_layer {
-            display-name = "default";
+// replace a/o/u/s with German umlauts when NAV and NUM are held jointly
+ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
 
-            // ------------------------------------------------------------------------------------------------------------
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+// combos
 
-            bindings = <
-&trans          &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                              &kp N6  &kp N7         &kp N8     &kp N9   &kp N0               &none
-&kp ESC         &kp Q   &kp W   &kp E         &kp R         &kp T                               &kp Y   &kp U          &kp I      &kp O    &kp P                &none
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F         &kp G                               &kp H   &kp J          &kp K      &kp L    &mt SEMICOLON COLON  &kp RIGHT_SHIFT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V         &kp B   &none        &none          &kp N   &kp M          &kp COMMA  &kp DOT  &kp FSLH             &kp RCTRL
-                        &none   &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp BACKSPACE  &tog 2  &kp RIGHT_ALT  &none      &none
-            >;
-        };
+/* keymap */
 
-        lower_layer {
-            display-name = "lower";
+ZMK_LAYER(default_layer,
+     // ╭─────────────┬──────────────┬────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+          &kp Q          &kp W        &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp Y         &kp SQT
+     // ├─────────────┼──────────────┼────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &hrm LGUI A    &hrm LALT R  &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LALT I   &hrm LGUI O
+     // ├─────────────┼──────────────┼────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &kp Z          &kp X        &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp DOT       &kp SEMI
+     // ╰─────────────┼──────────────┼────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                                    &kp ESC       &lt NAV SPACE &kp TAB           &kp RET       &bs_del_num   &ss_cw
+     //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
 
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
+ZMK_LAYER(nav_layer,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+          ___           ___           ___           ___           ___           ___               &kp PG_UP     &kp HOME      &kp UP        &kp END       &kp END       &kp INS
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &sk LGUI      &sk LALT      &sk LALT      &sk LCTRL     &sk LSHFT     ___               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp RIGHT     &kp DEL
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          ___           ___           ___           ___           ___           ___               ___           &kp LC(X)     &kp LC(INS)   &kp LS(INS)   &kp LS(INS)   ___
+     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                                    ___           ___           ___               ___           ___           ___
+     //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
 
-            bindings = <
-&trans           &kp F1     &kp F2                   &kp F3       &kp F4            &kp F5                            &kp F6           &kp F7    &kp F8           &kp F9     &kp F10   &mt F12 F11
-&mt TILDE GRAVE  &kp N1     &kp N2                   &kp N3       &kp N4            &kp N5                            &kp N6           &kp N7    &kp N8           &kp N9     &kp N0    &mt DOUBLE_QUOTES APOS
-&kp QUESTION     &kp EXCL   &kp AT                   &kp HASH     &kp DLLR          &kp PRCNT                         &kp CARET        &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR  &none
-&trans           &kp EQUAL  &mt UNDERSCORE KP_MINUS  &kp KP_PLUS  &kp LEFT_BRACKET  &kp LEFT_BRACE  &trans    &trans  &kp RIGHT_BRACE  &kp RBKT  &kp SEMI         &kp COLON  &kp BSLH  &trans
-                            &trans                   &trans       &trans            &trans          &trans    &trans  &trans           &trans    &trans           &trans
-            >;
-        };
-
-        raise_layer {
-            display-name = "raise";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
-
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &trans    &trans    &trans  &trans     &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                                      &trans    &trans    &trans  &trans     &trans  &trans
-&trans      &none         &trans        &trans        &trans        &trans                                      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp PRINTSCREEN
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans          &trans        &trans    &trans    &trans  &trans     &trans  &trans
-                          &trans        &trans        &trans        &trans        &Browser_bwd    &Browser_fwd  &trans    &trans    &trans  &trans
-            >;
-        };
-    };
-};
+ZMK_LAYER(num_layer,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+          &kp ESC       &kp N7        &kp N7        &kp N8        &kp N9        &kp STAR          ___           ___           ___           ___           ___           ___
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &kp TAB       &kp N4        &kp N4        &kp N5        &kp N6        &kp PLUS          ___           &sk RSHFT     &sk LCTRL     &sk LALT      &sk LALT      &sk LGUI
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          &kp RET       &kp N1        &kp N1        &kp N2        &kp N3        &kp FSLH          ___           ___           ___           ___           ___           ___
+     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                                    &kp DOT       &kp N0        &kp MINUS         ___           ___           ___
+     //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
