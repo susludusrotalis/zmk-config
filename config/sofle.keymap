@@ -1,29 +1,5 @@
-# 0 "sofle.keymap"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "sofle.keymap"
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-
-# 1 "../zmk-nodefree-config/helper.h" 1
-
-
-
-
-
-
-
-       
-# 5 "sofle.keymap" 2
-# 1 "../zmk-nodefree-config/keypos_def/keypos_42keys.h" 1
-# 10 "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
-       
-# 6 "sofle.keymap" 2
-# 1 "../zmk-nodefree-config/international_chars/german.dtsi" 1
 
 / {
   macros {
@@ -273,28 +249,7 @@
 	   &kp ESC &lt 2 SPACE &kp TAB &kp RET &bs_del_num &ss_cw>;
 
     };
-  };
 
-# 67 "sofle.keymap"
-
-  keymap {
-    compatible = "zmk,keymap";
-    layer_nav_layer {
-      label = "nav_layer";
-      bindings =
-          <&trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME 
-           &kp UP &kp END &kp END &kp INS &sk LGUI &sk LALT &sk LALT 
-           &sk LCTRL &sk LSHFT &trans &kp PG_DN &kp LEFT &kp DOWN 
-           &kp RIGHT &kp RIGHT &kp DEL &trans &trans &trans &trans 
-           &trans &trans &trans &kp LC(X) &kp LC(INS) &kp LS(INS) 
-           &kp LS(INS) &trans &trans &trans &trans &trans &trans &trans>;
-    };
-  };
-
-# 79 "sofle.keymap"
-
-  keymap {
-    compatible = "zmk,keymap";
     layer_num_layer {
       label = "num_layer";
        bindings =
@@ -307,4 +262,16 @@
            };
   };
 
+    layer_nav_layer {
+      label = "nav_layer";
+      bindings =
+          <&trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME 
+           &kp UP &kp END &kp END &kp INS &sk LGUI &sk LALT &sk LALT 
+           &sk LCTRL &sk LSHFT &trans &kp PG_DN &kp LEFT &kp DOWN 
+           &kp RIGHT &kp RIGHT &kp DEL &trans &trans &trans &trans 
+           &trans &trans &trans &kp LC(X) &kp LC(INS) &kp LS(INS) 
+           &kp LS(INS) &trans &trans &trans &trans &trans &trans &trans>;
+    };
+  };
+  };
 };
