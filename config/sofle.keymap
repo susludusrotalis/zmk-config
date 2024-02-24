@@ -6,7 +6,7 @@
             timeout-ms = <50>;
             bindings = <&kp UNDER>;
             key-positions = <19 20 30 31>;
-            layers = <DEF NAV NUM>;
+            layers = <1 3 2>;
             require-prior-idle-ms = <200>;
         };
 
@@ -16,7 +16,7 @@
             timeout-ms = <15>;
             bindings = <&kp EQUAL>;
             key-positions = <16 15>;
-            layers = <DEF NAV NUM>;
+            layers = <1 3 2>;
             require-prior-idle-ms = <200>;
         };
 
@@ -26,7 +26,7 @@
             timeout-ms = <50>;
             bindings = <&kp MINUS>;
             key-positions = <33 34>;
-            layers = <DEF NAV NUM>;
+            layers = <1 3 2>;
             require-prior-idle-ms = <200>;
         };
 
@@ -85,59 +85,6 @@
     };
 
 
-
-    behaviors {
-        de_ae: de_ae {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_ae";
-            #binding-cells = <0>;
-
-            bindings = <&de_ae_lower>, <&de_ae_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
-
-    behaviors {
-        de_oe: de_oe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_oe";
-            #binding-cells = <0>;
-
-            bindings = <&de_oe_lower>, <&de_oe_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
-
-
-    behaviors {
-        de_ue: de_ue {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_ue";
-            #binding-cells = <0>;
-
-            bindings = <&de_ue_lower>, <&de_ue_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
-
-    behaviors {
-        de_eszett: de_eszett {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_eszett";
-            #binding-cells = <0>;
-
-            bindings = <&de_eszett_lower>, <&de_eszett_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
     behaviors {
         hrm: hrm {
             label = "ZB_hrm";
@@ -145,51 +92,14 @@
             #binding-cells = <2>;
 
             flavor = "balanced";
-            tapping-term - ms = <280>;
+            tapping-term-ms = <280>;
 
-            quick-tap - ms = <125>;
+            quick-tap-ms = <125>;
 
             bindings = <&kp>, <&kp>;
         };
     };
 
-    behaviors {
-        ss_cw: ss_cw {
-            label = "ZB_ss_cw";
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-
-            tapping-term - ms = <200>;
-
-            bindings = <&sk LSHFT>, <&caps_word>;
-        };
-    };
-
-    behaviors {
-        bs_del_num: bs_del_num {
-            label = "ZB_bs_del_num";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-
-            bindings = <&lt 1 BSPC>, <&kp DEL>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
-    behaviors {
-        win_sleep: win_sleep {
-            label = "ZB_win_sleep";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-
-            wait-ms = <100>;
-
-            tap-ms = <5>;
-
-            bindings = <&kp LG(X) &kp U &kp S>;
-        };
-    };
 
     macros {
         euro_sign_lower: euro_sign_lower {
@@ -211,17 +121,6 @@
         };
     };
 
-    behaviors {
-        euro_sign: euro_sign {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_euro_sign";
-            #binding-cells = <0>;
-
-            bindings = <&euro_sign_lower>, <&none>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
