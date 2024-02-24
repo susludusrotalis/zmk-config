@@ -11,8 +11,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp E & kp N4>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp E &kp N4>, <&macro_tap &kp RET>;
     };
   };
 
@@ -25,8 +25,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp C & kp N4>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp C &kp N4>, <&macro_tap &kp RET>;
     };
   };
 
@@ -51,8 +51,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp F & kp N6>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp F &kp N6>, <&macro_tap &kp RET>;
     };
   };
 
@@ -64,8 +64,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp D & kp N6>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp D &kp N6>, <&macro_tap &kp RET>;
     };
   };
 
@@ -88,8 +88,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp F & kp C>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp F &kp C>, <&macro_tap &kp RET>;
     };
   };
 
@@ -101,8 +101,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp D & kp C>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp D &kp C>, <&macro_tap &kp RET>;
     };
   };
 
@@ -125,8 +125,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N0 & kp N0 & kp D & kp F>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N0 &kp N0 &kp D &kp F>, <&macro_tap &kp RET>;
     };
   };
 
@@ -138,8 +138,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N1 & kp E & kp N9 & kp E>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N1 &kp E &kp N9 &kp E>, <&macro_tap &kp RET>;
     };
   };
 
@@ -200,7 +200,7 @@
       #binding - cells = < 0>;
       wait - ms = <100>;
       tap - ms = <5>;
-      bindings = <&kp LG(X) & kp U & kp S>;
+      bindings = <&kp LG(X) &kp U &kp S>;
     };
   };
 
@@ -212,8 +212,8 @@
       wait - ms = <0>;
       tap - ms = <0>;
       binding - cells = <0>;
-      bindings = <&macro_tap & kp RALT & kp U>,
-      <&macro_tap & kp N2 & kp N0 & kp A & kp C>, <&macro_tap & kp RET>;
+      bindings = <&macro_tap &kp RALT &kp U>,
+      <&macro_tap &kp N2 &kp N0 &kp A &kp C>, <&macro_tap &kp RET>;
     };
   };
 
