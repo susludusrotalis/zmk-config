@@ -12,28 +12,7 @@
 	   compatible = "zmk,combos"; combo_colon { timeout-ms = <20>; bindings = <&kp COLON>; key-positions = <LT3 LT2>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; };
 	   compatible = "zmk,combos"; combo_minus { timeout-ms = <50>; bindings = <&kp MINUS>; key-positions = <RM3 RM4>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; };
   };
-  # 46 "combos.dsti"
-  # / { combos { compatible = "zmk,combos"; combo_cut { timeout-ms = <50>; bindings = <&kp LG(X)>; key-positions = <LB3 LB1>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_copy { timeout-ms = <50>; bindings = <&kp LG(C)>; key-positions = <LB3 LB2>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_paste { timeout-ms = <50>; bindings = <&kp LG(V)>; key-positions = <LB2 LB1>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  #
-  #
-  #
-  # / { combos { compatible = "zmk,combos"; combo_del { timeout-ms = <20>; bindings = <&kp DEL>; key-positions = <RT2 RT3>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  #
-  # / { combos { compatible = "zmk,combos"; combo_lpar { timeout-ms = <20>; bindings = <&hmr_lpar_lt RS(LGUI) 0>; key-positions = <RM1 RM2>; layers = <DEF NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_rpar { timeout-ms = <20>; bindings = <&hmr_rpar_gt LA(LGUI) 0>; key-positions = <RM2 RM3>; layers = <DEF NUM>; require-prior-idle-ms = <200>; }; }; };
-  #
-  #
-  #
-  # / { combos { compatible = "zmk,combos"; combo_lbkt { timeout-ms = <20>; bindings = <&kp LBKT>; key-positions = <RB1 RB2>; layers = <DEF NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_rbkt { timeout-ms = <20>; bindings = <&kp RBKT>; key-positions = <RB2 RB3>; layers = <DEF NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_lbrc { timeout-ms = <20>; bindings = <&kp LBRC>; key-positions = <RB1 RB2>; layers = <NAV>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_rbrc { timeout-ms = <20>; bindings = <&kp RBRC>; key-positions = <RB2 RB3>; layers = <NAV>; require-prior-idle-ms = <200>; }; }; };
-  #
-  # / { combos { compatible = "zmk,combos"; combo_grk { timeout-ms = <20>; bindings = <&sl UC>; key-positions = <RT1 RT3>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  # / { combos { compatible = "zmk,combos"; combo_cpgrk { timeout-ms = <20>; bindings = <&sls 0>; key-positions = <RT1 RT2 RT3>; layers = <DEF NAV NUM>; require-prior-idle-ms = <200>; }; }; };
-  #
+
   macros {
   de_ae_lower:
     de_ae_lower {
