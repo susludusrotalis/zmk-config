@@ -130,7 +130,7 @@
 &trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_EQUAL               &trans  &trans           &trans     &trans         &trans         &trans
 &trans  &trans  &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS    &trans  &sk RIGHT_SHIFT  &sk RCTRL  &kp RIGHT_ALT  &sk RIGHT_GUI  &trans
 &trans  &trans  &kp N1        &kp N2        &kp N3        &mt KP_MINUS KP_DIVIDE     &trans  &trans           &trans     &trans         &trans         &trans
-                              &trans        &trans        &trans                     &trans  &trans           &trans
+                              &trans        &trans        &tog 0                     &trans  &trans           &trans
             >;
         };
 
@@ -141,7 +141,7 @@
 &trans  &trans        &trans    &trans     &trans     &trans    &kp PG_UP  &kp HOME   &kp UP       &kp END      &kp END      &trans
 &trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &kp PG_DN  &kp LEFT   &kp DOWN     &kp RIGHT    &kp RIGHT    &trans
 &trans  &trans        &trans    &trans     &trans     &trans    &trans     &kp LC(X)  &kp LC(INS)  &kp LS(INS)  &kp LS(INS)  &trans
-                                &trans     &trans     &trans    &trans     &trans     &trans
+                                &trans     &trans     &tog 0    &trans     &trans     &trans
             >;
         };
     };
