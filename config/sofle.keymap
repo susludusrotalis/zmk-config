@@ -38,8 +38,8 @@
       <&macro_tap & kp N0 & kp N0 & kp E & kp N4>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
+
   macros {
   de_ae_upper:
     de_ae_upper {
@@ -52,8 +52,8 @@
       <&macro_tap & kp N0 & kp N0 & kp C & kp N4>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
+
   behaviors {
   de_ae:
     de_ae {
@@ -64,8 +64,8 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
-/ {
+
+
   macros {
   de_oe_lower:
     de_oe_lower {
@@ -78,8 +78,7 @@
       <&macro_tap & kp N0 & kp N0 & kp F & kp N6>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   macros {
   de_oe_upper:
     de_oe_upper {
@@ -92,8 +91,7 @@
       <&macro_tap & kp N0 & kp N0 & kp D & kp N6>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   behaviors {
   de_oe:
     de_oe {
@@ -104,8 +102,7 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
-/ {
+
   macros {
   de_ue_lower:
     de_ue_lower {
@@ -118,8 +115,7 @@
       <&macro_tap & kp N0 & kp N0 & kp F & kp C>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   macros {
   de_ue_upper:
     de_ue_upper {
@@ -132,8 +128,7 @@
       <&macro_tap & kp N0 & kp N0 & kp D & kp C>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   behaviors {
   de_ue:
     de_ue {
@@ -144,8 +139,7 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
-/ {
+
   macros {
   de_eszett_lower:
     de_eszett_lower {
@@ -158,8 +152,7 @@
       <&macro_tap & kp N0 & kp N0 & kp D & kp F>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   macros {
   de_eszett_upper:
     de_eszett_upper {
@@ -172,8 +165,7 @@
       <&macro_tap & kp N1 & kp E & kp N9 & kp E>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   behaviors {
   de_eszett:
     de_eszett {
@@ -184,71 +176,57 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
+
 # 7 "sofle.keymap" 2
 # 19 "sofle.keymap"
-/ {
+
   behaviors {
   hrm:
     hrm {
       label = "ZB_hrm";
       compatible = "zmk,behavior-hold-tap";
-#binding - cells = < 2>;
+      #binding - cells = < 2>;
       flavor = "balanced";
       tapping - term - ms = <280>;
       quick - tap - ms = <125>;
       bindings = <&kp>, <&kp>;
     };
   };
-};
 
-
-
-
-
-
-
-/ {
   behaviors {
   ss_cw:
     ss_cw {
       label = "ZB_ss_cw";
       compatible = "zmk,behavior-tap-dance";
-#binding - cells = < 0>;
+      #binding - cells = < 0>;
       tapping - term - ms = <200>;
       bindings = <&sk LSHFT>, <&caps_word>;
     };
   };
-};
 
-/ {
   behaviors {
   bs_del_num:
     bs_del_num {
       label = "ZB_bs_del_num";
       compatible = "zmk,behavior-mod-morph";
-#binding - cells = < 0>;
+      #binding - cells = < 0>;
       bindings = <&lt 1 BSPC>, <&kp DEL>;
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
 
-/ {
   behaviors {
   win_sleep:
     win_sleep {
       label = "ZB_win_sleep";
       compatible = "zmk,behavior-macro";
-#binding - cells = < 0>;
+      #binding - cells = < 0>;
       wait - ms = <100>;
       tap - ms = <5>;
       bindings = <&kp LG(X) & kp U & kp S>;
     };
   };
-};
 
-/ {
   macros {
   euro_sign_lower:
     euro_sign_lower {
@@ -261,8 +239,7 @@
       <&macro_tap & kp N2 & kp N0 & kp A & kp C>, <&macro_tap & kp RET>;
     };
   };
-};
-/ {
+
   behaviors {
   euro_sign:
     euro_sign {
@@ -273,9 +250,7 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
   };
-};
 
-/ {
   conditional_layers {
     compatible = "zmk,conditional-layers";
     tri_layer {
@@ -284,9 +259,7 @@
       then - layer = <GER>;
     };
   };
-};
 
-/ {
   keymap {
     compatible = "zmk,keymap";
     layer_default_layer {
@@ -300,9 +273,9 @@
            kp ESC & lt 2 SPACE & kp TAB & kp RET & bs_del_num & ss_cw>;
     };
   };
-};
+
 # 67 "sofle.keymap"
-/ {
+
   keymap {
     compatible = "zmk,keymap";
     layer_nav_layer {
@@ -316,9 +289,9 @@
            kp LS(INS) & trans & trans & trans & trans & trans & trans & trans>;
     };
   };
-};
+
 # 79 "sofle.keymap"
-/ {
+
   keymap {
     compatible = "zmk,keymap";
     layer_num_layer {
@@ -332,4 +305,5 @@
            trans & trans & trans>;
     };
   };
+
 };
