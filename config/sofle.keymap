@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_wombo {
+            bindings = <&kp INT_KPJPCOMMA>;
+            key-positions = <28 27>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
