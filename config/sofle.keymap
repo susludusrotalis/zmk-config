@@ -113,12 +113,12 @@
         hrm: hrm {
             label = "ZB_hrm";
             compatible = "zmk,behavior-hold-tap";
-            #binding = - cells< 2>;
+            #binding-cells = <2>;
 
             flavor = "balanced";
             tapping = - term - ms<280>;
 
-            quick = - tap - ms<125>;
+            quick-tap-ms = <125>;
 
             bindings = <&kp>, <&kp>;
         };
@@ -139,7 +139,7 @@
         de_oe: de_oe {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_oe";
-            #binding = - cells<0>;
+            #binding-cells = <0>;
 
             bindings = <&de_oe_lower>, <&de_oe_upper>;
 
@@ -152,7 +152,7 @@
         bs_del_num: bs_del_num {
             label = "ZB_bs_del_num";
             compatible = "zmk,behavior-mod-morph";
-            #binding = - cells< 0>;
+            #binding-cells = <0>;
 
             bindings = <&lt 1 BSPC>, <&kp DEL>;
 
@@ -165,7 +165,7 @@
         euro_sign: euro_sign {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_euro_sign";
-            #binding = - cells<0>;
+            #binding-cells = <0>;
 
             bindings = <&euro_sign_lower>, <&none>;
 
@@ -177,11 +177,9 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if = -layers<2 1>;
+            if-layers = <2 1>;
 
-            then -
-
-            layer = <GER>;
+            then-layer = <3>;
         };
     };
 
