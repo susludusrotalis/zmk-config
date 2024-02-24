@@ -265,12 +265,13 @@
     layer_default_layer {
       label = "default_layer";
       bindings =
-          <&kp Q & kp W & kp W & kp F & kp P & kp B & kp J & kp L & kp U &
-           kp Y & kp Y & kp SQT & hrm LGUI A & hrm LALT R & hrm LALT R &
-           hrm LCTRL S & hrm LSHFT T & kp G & kp M & hrm RSHFT N & hrm LCTRL E &
-           hrm LALT I & hrm LALT I & hrm LGUI O & kp Z & kp X & kp X & kp C &
-           kp D & kp V & kp K & kp H & kp COMMA & kp DOT & kp DOT & kp SEMI &
-           kp ESC & lt 2 SPACE & kp TAB & kp RET & bs_del_num & ss_cw>;
+          <&kp Q &kp W &kp W &kp F &kp P &kp B &kp J &kp L &kp U 
+	   &kp Y &kp Y &kp SQT &hrm LGUI A &hrm LALT R &hrm LALT R 
+	   &hrm LCTRL S &hrm LSHFT T &kp G &kp M &hrm RSHFT N &hrm LCTRL E 
+	   &hrm LALT I &hrm LALT I &hrm LGUI O &kp Z &kp X &kp X &kp C 
+	   &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp DOT &kp SEMI 
+	   &kp ESC &lt 2 SPACE &kp TAB &kp RET &bs_del_num &ss_cw>;
+
     };
   };
 
@@ -281,12 +282,12 @@
     layer_nav_layer {
       label = "nav_layer";
       bindings =
-          <&trans & trans & trans & trans & trans & trans & kp PG_UP & kp HOME &
-           kp UP & kp END & kp END & kp INS & sk LGUI & sk LALT & sk LALT &
-           sk LCTRL & sk LSHFT & trans & kp PG_DN & kp LEFT & kp DOWN &
-           kp RIGHT & kp RIGHT & kp DEL & trans & trans & trans & trans &
-           trans & trans & trans & kp LC(X) & kp LC(INS) & kp LS(INS) &
-           kp LS(INS) & trans & trans & trans & trans & trans & trans & trans>;
+          <&trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME 
+           &kp UP &kp END &kp END &kp INS &sk LGUI &sk LALT &sk LALT 
+           &sk LCTRL &sk LSHFT &trans &kp PG_DN &kp LEFT &kp DOWN 
+           &kp RIGHT &kp RIGHT &kp DEL &trans &trans &trans &trans 
+           &trans &trans &trans &kp LC(X) &kp LC(INS) &kp LS(INS) 
+           &kp LS(INS) &trans &trans &trans &trans &trans &trans &trans>;
     };
   };
 
@@ -296,14 +297,14 @@
     compatible = "zmk,keymap";
     layer_num_layer {
       label = "num_layer";
-      bindings =
-          <&kp ESC & kp N7 & kp N7 & kp N8 & kp N9 & kp STAR & trans & trans &
-           trans & trans & trans & trans & kp TAB & kp N4 & kp N4 & kp N5 &
-           kp N6 & kp PLUS & trans & sk RSHFT & sk LCTRL & sk LALT & sk LALT &
-           sk LGUI & kp RET & kp N1 & kp N1 & kp N2 & kp N3 & kp FSLH & trans &
-           trans & trans & trans & trans & trans & kp DOT & kp N0 & kp MINUS &
-           trans & trans & trans>;
-    };
+       bindings =
+                 <&kp ESC &kp N7 &kp N7 &kp N8 &kp N9 &kp STAR &trans &trans 
+                  &trans &trans &trans &trans &kp TAB &kp N4 &kp N4 &kp N5 
+                  &kp N6 &kp PLUS &trans &sk RSHFT &sk LCTRL &sk LALT &sk LALT 
+                  &sk LGUI &kp RET &kp N1 &kp N1 &kp N2 &kp N3 &kp FSLH &trans 
+                  &trans &trans &trans &trans &trans &kp DOT &kp N0 &kp MINUS 
+                  &trans &trans &trans>;
+           };
   };
 
 };
