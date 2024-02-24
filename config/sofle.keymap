@@ -123,30 +123,6 @@
             bindings = <&kp>, <&kp>;
         };
     };
-    behaviors {
-        de_ae: de_ae {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_ae";
-            #binding-cells = <0>;
-
-            bindings = <&de_ae_lower>, <&de_ae_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
-    behaviors {
-        de_oe: de_oe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_de_oe";
-            #binding-cells = <0>;
-
-            bindings = <&de_oe_lower>, <&de_oe_upper>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
-
 
     behaviors {
         bs_del_num: bs_del_num {
@@ -160,18 +136,6 @@
         };
     };
 
-
-    behaviors {
-        euro_sign: euro_sign {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UC_MORPH_euro_sign";
-            #binding-cells = <0>;
-
-            bindings = <&euro_sign_lower>, <&none>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
