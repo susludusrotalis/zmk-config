@@ -28,7 +28,7 @@
         combo_under {
             timeout-ms = <50>;
             bindings = <&kp UNDER>;
-            key-positions = <RT1 RT2>;
+            key-positions = <RT1 RT2 30 31>;
             layers = <DEF NAV NUM>;
             require-prior-idle-ms = <200>;
         };
@@ -44,15 +44,6 @@
         };
 
         compatible = "zmk,combos";
-
-        combo_colon {
-            timeout-ms = <20>;
-            bindings = <&kp COLON>;
-            key-positions = <LT3 LT2>;
-            layers = <DEF NAV NUM>;
-            require-prior-idle-ms = <200>;
-        };
-
         compatible = "zmk,combos";
 
         combo_minus {
@@ -108,17 +99,24 @@
             timeout-ms = <20>;
             require-prior-idle-ms = <20>;
         };
+
+        slash_pipe {
+            bindings = <&mt BACKSLASH KP_SLASH>;
+            key-positions = <16 17>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+        };
     };
 
     macros {
         de_ae_lower: de_ae_lower {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_ae_lower";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -134,11 +132,11 @@
         de_ae_upper: de_ae_upper {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_ae_upper";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -154,7 +152,7 @@
         de_ae: de_ae {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_ae";
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings = <&de_ae_lower>, <&de_ae_upper>;
 
@@ -166,11 +164,11 @@
         de_oe_lower: de_oe_lower {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_oe_lower";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -186,11 +184,11 @@
         de_oe_upper: de_oe_upper {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_oe_upper";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -206,7 +204,7 @@
         de_oe: de_oe {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_oe";
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings = <&de_oe_lower>, <&de_oe_upper>;
 
@@ -218,11 +216,11 @@
         de_ue_lower: de_ue_lower {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_ue_lower";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -238,11 +236,11 @@
         de_ue_upper: de_ue_upper {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_ue_upper";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -258,7 +256,7 @@
         de_ue: de_ue {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_ue";
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings = <&de_ue_lower>, <&de_ue_upper>;
 
@@ -270,11 +268,11 @@
         de_eszett_lower: de_eszett_lower {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_eszett_lower";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -290,11 +288,11 @@
         de_eszett_upper: de_eszett_upper {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_de_eszett_upper";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -310,7 +308,7 @@
         de_eszett: de_eszett {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_eszett";
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings = <&de_eszett_lower>, <&de_eszett_upper>;
 
@@ -325,12 +323,12 @@
         hrm: hrm {
             label = "ZB_hrm";
             compatible = "zmk,behavior-hold-tap";
-            #binding = - cells,, < 2>;
+            #binding = - cells,,, < 2>;
 
             flavor = "balanced";
-            tapping = - term - ms,, <280>;
+            tapping = - term - ms,,, <280>;
 
-            quick = - tap - ms,, <125>;
+            quick = - tap - ms,,, <125>;
 
             bindings = <&kp>, <&kp>;
         };
@@ -340,9 +338,9 @@
         ss_cw: ss_cw {
             label = "ZB_ss_cw";
             compatible = "zmk,behavior-tap-dance";
-            #binding = - cells,, < 0>;
+            #binding = - cells,,, < 0>;
 
-            tapping = - term - ms,, <200>;
+            tapping = - term - ms,,, <200>;
 
             bindings = <&sk LSHFT>, <&caps_word>;
         };
@@ -352,7 +350,7 @@
         bs_del_num: bs_del_num {
             label = "ZB_bs_del_num";
             compatible = "zmk,behavior-mod-morph";
-            #binding = - cells,, < 0>;
+            #binding = - cells,,, < 0>;
 
             bindings = <&lt 1 BSPC>, <&kp DEL>;
 
@@ -364,11 +362,11 @@
         win_sleep: win_sleep {
             label = "ZB_win_sleep";
             compatible = "zmk,behavior-macro";
-            #binding = - cells,, < 0>;
+            #binding = - cells,,, < 0>;
 
-            wait = - ms,, <100>;
+            wait = - ms,,, <100>;
 
-            tap = - ms,, <5>;
+            tap = - ms,,, <5>;
 
             bindings = <&kp LG(X) &kp U &kp S>;
         };
@@ -378,11 +376,11 @@
         euro_sign_lower: euro_sign_lower {
             compatible = "zmk,behavior-macro";
             label = "UC_MACRO_euro_sign_lower";
-            wait = - ms,, <0>;
+            wait = - ms,,, <0>;
 
-            tap = - ms,, <0>;
+            tap = - ms,,, <0>;
 
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings =
                 <&macro_tap>,
@@ -398,7 +396,7 @@
         euro_sign: euro_sign {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_euro_sign";
-            binding = - cells,, <0>;
+            binding = - cells,,, <0>;
 
             bindings = <&euro_sign_lower>, <&none>;
 
@@ -410,7 +408,7 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if = -layers,, <2 1>;
+            if = -layers,,, <2 1>;
 
             then -
 
