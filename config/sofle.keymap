@@ -8,19 +8,17 @@
         combo_under {
             timeout-ms = <50>;
             bindings = <&kp UNDER>;
-            key-positions = <19 20 30 31>;
-            layers = <1 3 2>;
-            require-prior-idle-ms = <200>;
+            key-positions = <40 41>;
+            require-prior-idle-ms = <300>;
         };
 
         compatible = "zmk,combos";
 
         combo_equals {
-            timeout-ms = <15>;
+            timeout-ms = <50>;
             bindings = <&kp EQUAL>;
-            key-positions = <16 15>;
-            layers = <1 3 2>;
-            require-prior-idle-ms = <200>;
+            key-positions = <>;
+            require-prior-idle-ms = <300>;
         };
 
         compatible = "zmk,combos";
@@ -28,89 +26,85 @@
         combo_minus {
             timeout-ms = <50>;
             bindings = <&kp MINUS>;
-            key-positions = <33 34>;
-            layers = <1 3 2>;
-            require-prior-idle-ms = <200>;
+            key-positions = <45 46>;
+            require-prior-idle-ms = <300>;
         };
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <26 27>;
+            key-positions = <38 39>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <300>;
         };
 
         combo_enter {
             bindings = <&kp RETURN>;
-            key-positions = <32 33>;
-            timeout-ms = <200>;
-            require-prior-idle-ms = <50>;
+            key-positions = <44 45>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
         };
 
         left_par_or_lt {
             bindings = <&mt LESS_THAN LEFT_PARENTHESIS>;
-            key-positions = <18 19>;
+            key-positions = <30 31>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <300>;
         };
 
         right_par_or_gt {
             bindings = <&mt GREATER_THAN RIGHT_PARENTHESIS>;
-            key-positions = <19 20>;
+            key-positions = <32 31>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <50>;
         };
 
         left_brace_or_bracket {
             bindings = <&mt LEFT_BRACKET LEFT_BRACE>;
-            key-positions = <6 7>;
+            key-positions = <18 19>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <300>;
         };
 
         right_brace_or_bracket {
             bindings = <&mt RIGHT_BRACKET RIGHT_BRACE>;
-            key-positions = <7 8>;
+            key-positions = <19 20>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
         };
 
         zero {
             bindings = <&kp KP_NUMBER_0>;
-            key-positions = <25 26>;
+            key-positions = <37 38>;
             layers = <1>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <300>;
         };
 
         slash_pipe {
             bindings = <&mt BACKSLASH KP_SLASH>;
-            key-positions = <16 17>;
+            key-positions = <28 29>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <400>;
         };
     };
-
 
     behaviors {
         hrm: hrm {
             label = "ZB_hrm";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-
             flavor = "balanced";
             tapping-term-ms = <280>;
-
             quick-tap-ms = <125>;
-
             bindings = <&kp>, <&kp>;
         };
     };
-
-
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         tri_layer {
             if-layers = <2 1>;
-
             then-layer = <3>;
         };
     };
@@ -121,33 +115,33 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&kp ESCAPE &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp DELETE
-&mt TILDE GRAVE &hrm LEFT_GUI A &hrm LALT R &hrm LCTRL S &hrm LSHFT T &kp G &kp H &hrm RSHFT J &hrm LCTRL K &hrm LALT L &hrm RIGHT_GUI SEMICOLON &mt DOUBLE_QUOTES APOSTROPHE
-&trans &kp Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp DOT &trans
-                                               &trans &mo 1 &kp SPACE &kp BACKSPACE &mo 2 &trans
+&trans           &trans           &trans       &trans        &trans        &trans       &trans         &trans        &trans        &trans       &trans                    &trans
+&kp ESCAPE       &kp Q            &kp W        &kp E         &kp R         &kp T        &kp Y          &kp U         &kp I         &kp O        &kp P                     &kp DELETE
+&mt TILDE GRAVE  &hrm LEFT_GUI A  &hrm LALT R  &hrm LCTRL S  &hrm LSHFT T  &kp G        &kp H          &hrm RSHFT J  &hrm LCTRL K  &hrm LALT L  &hrm RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z            &kp X        &kp C         &kp D         &kp V        &kp K          &kp H         &kp COMMA     &kp DOT      &kp DOT                   &trans
+                                               &trans        &mo 1         &kp SPACE    &kp BACKSPACE  &mo 2         &trans
             >;
         };
 
         layer_num_layer {
             label = "num_layer";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp KP_EQUAL &trans &trans &trans &trans &trans &trans
-&trans &trans &kp N4 &kp NUMBER_5 &kp N6 &mt KP_MULTIPLY KP_PLUS &trans &sk RIGHT_SHIFT &sk RCTRL &kp RIGHT_ALT &sk RIGHT_GUI &trans
-&trans &trans &kp N1 &kp N2 &kp N3 &mt KP_MINUS KP_DIVIDE &trans &trans &trans &trans &trans &trans
-                              &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans        &trans        &trans        &trans                     &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_EQUAL               &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans  &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS    &trans  &sk RIGHT_SHIFT  &sk RCTRL  &kp RIGHT_ALT  &sk RIGHT_GUI  &trans
+&trans  &trans  &kp N1        &kp N2        &kp N3        &mt KP_MINUS KP_DIVIDE     &trans  &trans           &trans     &trans         &trans         &trans
+                              &trans        &trans        &trans                     &trans  &trans           &trans
             >;
         };
 
         layer_nav_layer {
             label = "nav_layer";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME &kp UP &kp END &kp END &trans
-&trans &sk LEFT_GUI &sk LALT &sk LCTRL &sk LSHFT &trans &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RIGHT &trans
-&trans &trans &trans &trans &trans &trans &trans &kp LC(X) &kp LC(INS) &kp LS(INS) &kp LS(INS) &trans
-                                &trans &trans &trans &trans &trans &trans
+&trans  &trans        &trans    &trans     &trans     &trans    &trans     &trans     &trans       &trans       &trans       &trans
+&trans  &trans        &trans    &trans     &trans     &trans    &kp PG_UP  &kp HOME   &kp UP       &kp END      &kp END      &trans
+&trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &kp PG_DN  &kp LEFT   &kp DOWN     &kp RIGHT    &kp RIGHT    &trans
+&trans  &trans        &trans    &trans     &trans     &trans    &trans     &kp LC(X)  &kp LC(INS)  &kp LS(INS)  &kp LS(INS)  &trans
+                                &trans     &trans     &trans    &trans     &trans     &trans
             >;
         };
     };
