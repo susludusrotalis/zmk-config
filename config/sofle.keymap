@@ -15,6 +15,9 @@
         combo_wombo {
             bindings = <&kp INT_KPJPCOMMA>;
             key-positions = <28 27>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
         };
     };
 
