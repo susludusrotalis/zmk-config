@@ -111,7 +111,7 @@
         tri_layer {
             if-layers = <2 1>;
 
-            then-layer = <GER>;
+            then-layer = <3>;
         };
     };
 
