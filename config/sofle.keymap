@@ -116,7 +116,7 @@
             #binding-cells = <2>;
 
             flavor = "balanced";
-            tapping = - term - ms<280>;
+            tapping-term-ms = <280>;
 
             quick-tap-ms = <125>;
 
@@ -127,7 +127,7 @@
         de_ae: de_ae {
             compatible = "zmk,behavior-mod-morph";
             label = "UC_MORPH_de_ae";
-            #binding = - cells<0>;
+            #binding-cells<0>;
 
             bindings = <&de_ae_lower>, <&de_ae_upper>;
 
