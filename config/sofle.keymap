@@ -143,9 +143,9 @@
             label = "num_layer";
             bindings = <
 &trans  &trans           &trans        &trans        &trans        &trans                                   &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &trans           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_EQUAL                             &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL                                &trans  &trans           &trans     &trans         &trans         &trans
 &trans  &kp KP_NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS                  &trans  &sk RIGHT_SHIFT  &sk RCTRL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
-&trans  &trans           &kp N1        &kp N2        &kp N3        &mt KP_MINUS KP_DIVIDE   &trans  &trans  &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans           &kp N1        &kp N2        &kp N3        &mt KP_DIVIDE KP_MINUS   &trans  &trans  &trans  &trans           &trans     &trans         &trans         &trans
         &trans           &trans        &trans        &to 0         &trans                                   &trans  &mo 2            &trans     &trans         &trans
             >;
         };
