@@ -72,14 +72,6 @@
             require-prior-idle-ms = <300>;
         };
 
-        zero {
-            bindings = <&kp KP_NUMBER_0>;
-            key-positions = <37 38>;
-            layers = <1>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <300>;
-        };
-
         slash_pipe {
             bindings = <&mt BACKSLASH KP_SLASH>;
             key-positions = <28 29>;
@@ -141,20 +133,20 @@
             bindings = <
 &trans           &trans           &trans           &trans        &trans             &trans                     &trans         &trans              &trans        &trans            &trans                    &trans
 &kp ESCAPE       &kp Q            &kp W            &kp E         &kp R              &kp T                      &kp Y          &kp U               &kp I         &kp O             &kp P                     &kp DELETE
-&mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl D LCTRL  &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
-&trans           &kp Z            &kp X            &kp C         &kp D              &kp V      &trans  &trans  &kp N          &kp N               &kp M         &kp KP_COMMA      &kp KP_DOT                &trans
-                 &trans           &trans           &trans        &to 1              &kp SPACE                  &kp BACKSPACE  &to 2               &trans        &trans            &trans
+&mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D  &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z            &kp X            &kp C         &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp KP_COMMA  &kp KP_DOT        &trans                    &trans
+                 &trans           &trans           &trans        &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
             >;
         };
 
         layer_num_layer {
             label = "num_layer";
             bindings = <
-&trans  &trans  &trans        &trans        &trans        &trans                                   &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_EQUAL                             &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &trans  &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS                  &trans  &sk RIGHT_SHIFT  &sk RCTRL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
-&trans  &trans  &kp N1        &kp N2        &kp N3        &mt KP_MINUS KP_DIVIDE   &trans  &trans  &trans  &trans           &trans     &trans         &trans         &trans
-        &trans  &trans        &trans        &to 0         &trans                                   &trans  &trans           &trans     &trans         &trans
+&trans  &trans           &trans        &trans        &trans        &trans                                   &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_EQUAL                             &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans           &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS                  &trans  &sk RIGHT_SHIFT  &sk RCTRL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
+&trans  &kp KP_NUMBER_0  &kp N1        &kp N2        &kp N3        &mt KP_MINUS KP_DIVIDE   &trans  &trans  &trans  &trans           &trans     &trans         &trans         &trans
+        &trans           &trans        &trans        &to 0         &trans                                   &trans  &mo 2            &trans     &trans         &trans
             >;
         };
 
@@ -165,7 +157,7 @@
 &trans  &trans        &trans    &trans     &trans     &trans                  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
 &trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
 &trans  &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans  &trans
-        &trans        &trans    &trans     &to 0      &trans                  &trans     &trans    &trans    &trans     &trans
+        &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans    &trans     &trans
             >;
         };
     };
