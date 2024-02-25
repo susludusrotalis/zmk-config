@@ -6,16 +6,16 @@
         compatible = "zmk,combos";
 
         combo_under {
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             bindings = <&kp UNDER>;
-            key-positions = <40 41>;
+            key-positions = <40 39>;
             require-prior-idle-ms = <300>;
         };
 
         compatible = "zmk,combos";
 
         combo_equals {
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             bindings = <&kp EQUAL>;
             key-positions = <>;
             require-prior-idle-ms = <300>;
@@ -24,7 +24,7 @@
         compatible = "zmk,combos";
 
         combo_minus {
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             bindings = <&kp MINUS>;
             key-positions = <45 46>;
             require-prior-idle-ms = <300>;
@@ -32,22 +32,22 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <38 39>;
-            timeout-ms = <50>;
+            key-positions = <15 16>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
         combo_enter {
             bindings = <&kp RETURN>;
-            key-positions = <44 45>;
-            timeout-ms = <50>;
+            key-positions = <45 46>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
         left_par_or_lt {
             bindings = <&mt LESS_THAN LEFT_PARENTHESIS>;
             key-positions = <30 31>;
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
@@ -55,27 +55,27 @@
             bindings = <&mt GREATER_THAN RIGHT_PARENTHESIS>;
             key-positions = <32 31>;
             require-prior-idle-ms = <300>;
-            timeout-ms = <50>;
+            timeout-ms = <65>;
         };
 
         left_brace_or_bracket {
             bindings = <&mt LEFT_BRACKET LEFT_BRACE>;
             key-positions = <18 19>;
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
         right_brace_or_bracket {
             bindings = <&mt RIGHT_BRACKET RIGHT_BRACE>;
             key-positions = <19 20>;
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
         slash_pipe {
             bindings = <&mt BACKSLASH KP_SLASH>;
             key-positions = <28 29>;
-            timeout-ms = <50>;
+            timeout-ms = <65>;
             require-prior-idle-ms = <400>;
         };
     };
@@ -153,11 +153,11 @@
         layer_nav_layer {
             label = "nav_layer";
             bindings = <
-&trans  &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans    &trans     &trans  &trans
-&trans  &trans        &trans    &trans     &trans     &trans                  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans  &trans
-        &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans    &trans     &trans
+&trans  &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans  &trans
+&trans  &trans        &trans    &trans     &trans     &trans                  &kp PG_UP  &kp HOME  &trans  &kp END    &trans  &trans
+&trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                  &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans     &trans    &trans  &trans     &trans  &trans
+        &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans
             >;
         };
     };
