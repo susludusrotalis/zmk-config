@@ -76,7 +76,7 @@
             bindings = <&mt BACKSLASH KP_SLASH>;
             key-positions = <28 29>;
             timeout-ms = <65>;
-            require-prior-idle-ms = <400>;
+            require-prior-idle-ms = <300>;
         };
     };
 
