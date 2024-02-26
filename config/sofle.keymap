@@ -1,10 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-&num_word {
- layers = <NUM>;
- continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-};
 
 / {
     combos {
@@ -86,6 +82,11 @@
     };
 
     behaviors {
+        &num_word {
+	   layers = <NUM>;
+	   continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+	};
+
         smart_num: smart_num { label = "ZB_smart_num"; compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>; bindings = <&mo>, <&num_dance>; }; };
 
 	num_dance: num_dance { label = "ZB_num_dance"; compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&num_word>, <&sl NUM>; }; }; 
