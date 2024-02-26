@@ -148,8 +148,8 @@
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
                 <&kp TAB>,
-                <&macro_press>,
-                <&sk TAB>;
+                <&macro_tap>,
+                <&sk LEFT_ALT>;
 
             label = "TEST_ALT_TAB";
         };
