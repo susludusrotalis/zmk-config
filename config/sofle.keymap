@@ -129,9 +129,29 @@
         my_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp Z>, <&macro_tap>, <&kp A>;
+            bindings =
+                <&macro_press>,
+                <&kp Z>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_press>,
+                <&kp Z>;
 
             label = "NEW_MACRO";
+        };
+
+        test_alt_tab: test_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_press>,
+                <&kp LEFT_ALT>;
+
+            label = "TEST_ALT_TAB";
         };
     };
 
@@ -145,7 +165,7 @@
 &kp ESCAPE       &kp Q            &kp W            &kp E         &kp R              &kp T                      &kp Y          &kp U               &kp I         &kp O             &kp P                     &kp DELETE
 &mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D  &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
 &trans           &kp Z            &kp X            &kp C         &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp KP_COMMA  &kp KP_DOT        &trans                    &trans
-                 &trans           &trans           &my_macro     &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
+                 &trans           &test_alt_tab    &my_macro     &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
             >;
         };
 
