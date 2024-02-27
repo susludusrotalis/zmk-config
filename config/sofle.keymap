@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <1>;                                // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS>;  // adjust as desired
+            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS>;  // adjust as desired
             ignore-numbers;                                // numbers don't deactivate the layer
         };
 
