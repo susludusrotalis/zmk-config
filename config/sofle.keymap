@@ -91,9 +91,27 @@
 		ignore-numbers;                                // numbers don't deactivate the layer
 	};
 
-        smart_num: smart_num { label = "ZB_smart_num"; compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>; bindings = <&mo>, <&num_dance>; }; };
+	smart_num : smart_num {
+	  label = "ZB_smart_num";
+	  compatible = "zmk,behavior-hold-tap";
+	  #binding-cells = <2>;
+	  flavor = "balanced";
+	  tapping-term-ms = <200>;
+	  quick-tap-ms = <QUICK_TAP_MS>;
+	  bindings = <&mo>, <&num_dance>;
+	};
+	}
+	;
 
-	num_dance: num_dance { label = "ZB_num_dance"; compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&num_word>, <&sl NUM>; }; }; 
+	num_dance : num_dance {
+	  label = "ZB_num_dance";
+	  compatible = "zmk,behavior-tap-dance";
+          #binding-cells = <0>;
+	  tapping-term-ms = <200>;
+	  bindings = <&num_word>, <&sl NUM>;
+	};
+	}
+	;
 
         hrm: hrm {
             label = "ZB_hrm";
