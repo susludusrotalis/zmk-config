@@ -85,7 +85,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <1>;                                // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT>;  // adjust as desired
+            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS>;  // adjust as desired
             ignore-numbers;                                // numbers don't deactivate the layer
         };
 
@@ -216,33 +216,33 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans           &trans           &trans           &trans                   &trans             &trans                     &trans         &trans              &trans        &trans            &trans                    &trans
-&kp ESCAPE       &kp Q            &kp W            &kp E                    &kp R              &kp T                      &kp Y          &kp U               &kp I         &kp O             &kp P                     &kp DELETE
-&mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
-&trans           &kp Z            &kp X            &kp C                    &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp COMMA     &kp DOT           &trans                    &trans
-                 &trans           &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
+&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans          &trans                  &trans                    &trans
+&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &mt ASTERISK I  &mt LEFT_PARENTHESIS O  &mt RIGHT_PARENTHESIS P   &kp DELETE
+&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K    &hrr RIGHT_ALT L        &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &kp COMMA       &kp DOT                 &trans                    &trans
+                 &trans             &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                      &kp BACKSPACE  &mo 2               &trans          &trans                  &trans
             >;
         };
 
         layer_num_layer {
             label = "num_layer";
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans                        &trans        &trans        &trans        &trans  &trans  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp N9  &kp N0  &trans
-&trans  &trans        &trans        &trans        &trans        &trans                        &trans        &trans        &trans        &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans  &trans  &trans
-        &trans        &trans        &trans        &to 0         &trans                        &trans        &mo 2         &trans        &trans  &trans
+&trans  &trans                       &trans                   &trans                &trans                  &trans                                   &trans                 &trans                     &trans                    &trans                            &trans                             &trans
+&trans  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2  &mt HASH KP_NUMBER_3  &mt DOLLAR KP_NUMBER_4  &mt PERCENT KP_NUMBER_5                  &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt KP_NUMBER_0 RIGHT_PARENTHESIS  &trans
+&trans  &trans                       &trans                   &trans                &trans                  &trans                                   &trans                 &trans                     &trans                    &trans                            &trans                             &trans
+&trans  &trans                       &trans                   &trans                &trans                  &trans                   &trans  &trans  &trans                 &trans                     &trans                    &trans                            &trans                             &trans
+        &trans                       &trans                   &trans                &to 0                   &trans                                   &trans                 &mo 2                      &trans                    &trans                            &trans
             >;
         };
 
         layer_nav_layer {
             label = "nav_layer";
             bindings = <
-&trans  &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans  &trans
-&trans  &trans        &trans    &trans     &trans     &trans                  &kp PG_UP  &kp HOME  &trans  &kp END    &trans  &trans
-&trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                  &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans     &trans    &trans  &trans     &trans  &trans
-        &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans     &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &kp PG_UP  &kp HOME  &trans  &kp END    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans     &trans  &trans
+        &trans  &trans  &trans  &trans  &trans                  &trans     &trans    &trans  &trans     &trans
             >;
         };
     };
