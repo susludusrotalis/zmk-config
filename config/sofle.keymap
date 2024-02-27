@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -82,29 +81,29 @@
     };
 
     behaviors {
-	num_word: behavior_num_word {
-		compatible = "zmk,behavior-caps-word";
-		#binding-cells = <0>;
-		layers = <3>;                                // insert location of numbers layer here
-		continue-list = <BACKSPACE DELETE DOT COMMA>;  // adjust as desired
-		ignore-numbers;                                // numbers don't deactivate the layer
-	};
+        num_word: behavior_num_word {
+            compatible = "zmk,behavior-caps-word";
+            #binding-cells = <0>;
+            layers = <3>;                                // insert location of numbers layer here
+            continue-list = <BACKSPACE DELETE DOT COMMA>;  // adjust as desired
+            ignore-numbers;                                // numbers don't deactivate the layer
+        };
 
-	smart_num: smart_num {
-		compatible = "zmk,behavior-hold-tap";
-		#binding-cells = <2>;
-		flavor = "balanced";
-		tapping-term-ms = <200>;
-		quick-tap-ms = <50>;
-	  	bindings = <&mo>, <&num_dance>;
-	};
+        smart_num: smart_num {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <50>;
+            bindings = <&mo>, <&num_dance>;
+        };
 
-	num_dance: num_dance {
-		compatible = "zmk,behavior-tap-dance";
-        	#binding-cells = <0>;
-		tapping-term-ms = <200>;
-		bindings = <&num_word>, <&sl 3>;
-	};
+        num_dance: num_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&num_word>, <&sl 3>;
+        };
 
         hrm: hrm {
             compatible = "zmk,behavior-hold-tap";
@@ -208,33 +207,33 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans           &trans           &trans           &trans                   &trans             &trans                     &trans         &trans              &trans        &trans            &trans                    &trans
-&kp ESCAPE       &kp Q            &kp W            &kp E                    &kp R              &kp T                      &kp Y          &kp U               &kp I         &kp O             &kp P                     &kp DELETE
-&mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
-&trans           &kp Z            &kp X            &kp C                    &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp KP_COMMA  &kp KP_DOT        &trans                    &trans
-                 &trans           &trans           &smart_show_windows 0 0  &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
+&trans           &trans           &trans           &trans                   &trans             &trans                     &trans         &trans              &trans          &trans            &trans                    &trans
+&kp ESCAPE       &kp Q            &kp W            &kp E                    &kp R              &kp T                      &kp Y          &kp U               &kp I           &kp O             &kp P                     &kp DELETE
+&mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K    &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z            &kp X            &kp C                    &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp KP_COMMA    &kp KP_DOT        &trans                    &trans
+                 &trans           &trans           &smart_show_windows 0 0  &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &smart_num 1 0  &trans            &trans
             >;
         };
 
         layer_num_layer {
             label = "num_layer";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp EQUAL &trans &trans &trans &trans &trans &trans
-&trans &kp KP_NUMBER_0 &kp N4 &kp NUMBER_5 &kp N6 &mt KP_MULTIPLY KP_PLUS &trans &sk RIGHT_SHIFT &sk RCTRL &sk RIGHT_ALT &sk RIGHT_GUI &trans
-&trans &trans &kp N1 &kp N2 &kp N3 &mt KP_DIVIDE KP_MINUS &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &to 0 &trans &trans &mo 2 &trans &trans &trans
+&trans  &trans           &trans        &trans        &trans        &trans                                   &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &trans           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL                                &trans  &trans           &trans     &trans         &trans         &trans
+&trans  &kp KP_NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &mt KP_MULTIPLY KP_PLUS                  &trans  &sk RIGHT_SHIFT  &sk RCTRL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
+&trans  &trans           &kp N1        &kp N2        &kp N3        &mt KP_DIVIDE KP_MINUS   &trans  &trans  &trans  &trans           &trans     &trans         &trans         &trans
+        &trans           &trans        &trans        &to 0         &trans                                   &trans  &mo 2            &trans     &trans         &trans
             >;
         };
 
         layer_nav_layer {
             label = "nav_layer";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &kp PG_UP &kp HOME &trans &kp END &trans &trans
-&trans &sk LEFT_GUI &sk LALT &sk LCTRL &sk LSHFT &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans  &trans
+&trans  &trans        &trans    &trans     &trans     &trans                  &kp PG_UP  &kp HOME  &trans  &kp END    &trans  &trans
+&trans  &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans                  &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans     &trans    &trans  &trans     &trans  &trans
+        &trans        &trans    &trans     &trans     &trans                  &trans     &trans    &trans  &trans     &trans
             >;
         };
     };
