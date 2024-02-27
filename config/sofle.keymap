@@ -91,7 +91,6 @@
 	};
 
 	smart_num: smart_num {
-		label = "ZB_smart_num";
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		flavor = "balanced";
@@ -101,7 +100,6 @@
 	};
 
 	num_dance: num_dance {
-		label = "ZB_num_dance";
 		compatible = "zmk,behavior-tap-dance";
         	#binding-cells = <0>;
 		tapping-term-ms = <200>;
