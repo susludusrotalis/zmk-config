@@ -227,11 +227,11 @@
         layer_num_layer {
             label = "num_layer";
             bindings = <
-&trans  &trans                       &trans                   &trans                &trans                  &trans                                   &trans                 &trans                     &trans                    &trans                            &trans                             &trans
-&trans  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2  &mt HASH KP_NUMBER_3  &mt DOLLAR KP_NUMBER_4  &mt PERCENT KP_NUMBER_5                  &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt KP_NUMBER_0 RIGHT_PARENTHESIS  &trans
-&trans  &trans                       &trans                   &trans                &trans                  &trans                                   &trans                 &trans                     &trans                    &trans                            &trans                             &trans
-&trans  &trans                       &trans                   &trans                &trans                  &trans                   &trans  &trans  &trans                 &trans                     &trans                    &trans                            &trans                             &trans
-        &trans                       &trans                   &trans                &to 0                   &trans                                   &trans                 &mo 2                      &trans                    &trans                            &trans
+&trans  &trans                    &trans                &trans             &trans               &trans                                &trans              &trans                  &trans                 &trans                         &trans                    &trans
+&trans  &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT NUMBER_5                  &mt CARET NUMBER_6  &mt AMPERSAND NUMBER_7  &mt ASTERISK NUMBER_8  &mt LEFT_PARENTHESIS NUMBER_9  &mt KP_NUMBER_0 NUMBER_0  &trans
+&trans  &trans                    &trans                &trans             &trans               &trans                                &trans              &trans                  &trans                 &trans                         &trans                    &trans
+&trans  &trans                    &trans                &trans             &trans               &trans                &trans  &trans  &trans              &trans                  &trans                 &trans                         &trans                    &trans
+        &trans                    &trans                &trans             &to 0                &trans                                &trans              &mo 2                   &trans                 &trans                         &trans
             >;
         };
 
