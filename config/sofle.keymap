@@ -103,7 +103,7 @@
 	}
 	;
 
-	num_dance : num_dance {
+	num_dance: num_dance {
 		label = "ZB_num_dance";
 		compatible = "zmk,behavior-tap-dance";
         	#binding-cells = <0>;
