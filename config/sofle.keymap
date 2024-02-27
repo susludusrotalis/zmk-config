@@ -100,8 +100,6 @@
 		quick-tap-ms = <50>;
 	  	bindings = <&mo>, <&num_dance>;
 	};
-	}
-	;
 
 	num_dance: num_dance {
 		label = "ZB_num_dance";
@@ -110,8 +108,6 @@
 		tapping-term-ms = <200>;
 		bindings = <&num_word>, <&sl 3>;
 	};
-	}
-	;
 
         hrm: hrm {
             label = "ZB_hrm";
