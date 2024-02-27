@@ -82,9 +82,13 @@
     };
 
     behaviors {
-        &num_word {
-	   layers = <NUM>;
-	   continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+	num_word: behavior_num_word {
+		compatible = "zmk,behavior-caps-word";
+		label = "NUM_WORD";
+		#binding-cells = <0>;
+		layers = <3>;                                // insert location of numbers layer here
+		continue-list = <BACKSPACE DELETE DOT COMMA>;  // adjust as desired
+		ignore-numbers;                                // numbers don't deactivate the layer
 	};
 
         smart_num: smart_num { label = "ZB_smart_num"; compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>; bindings = <&mo>, <&num_dance>; }; };
@@ -124,7 +128,6 @@
 
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49 55 56 57 58 59>;
         };
-<<<<<<< HEAD
 
         smart_show_windows: smart_show_windows {
             compatible = "zmk,behavior-hold-tap";
@@ -134,8 +137,6 @@
             binding-cells = <2>;
             tapping-term-ms = <50>;
         };
-=======
->>>>>>> parent of b815689 (Test smart show windows)
     };
 
     conditional_layers {
@@ -179,7 +180,6 @@
 
             label = "TEST_ALT_TAB";
         };
-<<<<<<< HEAD
 
         show_windows_and_stick_nav_l: show_windows_and_stick_nav_l {
             compatible = "zmk,behavior-macro";
@@ -195,8 +195,6 @@
 
             label = "SHOW_WINDOWS_AND_STICK_NAV_L";
         };
-=======
->>>>>>> parent of b815689 (Test smart show windows)
     };
 
     keymap {
@@ -205,19 +203,12 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-<<<<<<< HEAD
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&kp ESCAPE &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp DELETE
-&mt TILDE GRAVE &hrl LEFT_GUI A &hrl LEFT_ALT S &hrl LCTRL D &hrl LEFT_SHIFT F &kp G &kp H &hrr RIGHT_SHIFT J &hrr RCTRL K &hrr RIGHT_ALT L &hrr RIGHT_GUI SEMICOLON &mt DOUBLE_QUOTES APOSTROPHE
-&trans &kp Z &kp X &kp C &kp V &kp B &trans &trans &kp N &kp M &kp KP_COMMA &kp KP_DOT &trans &trans
                  &trans &trans &smart_show_windows 0 0 &to 1 &kp SPACE &kp BACKSPACE &mo 2 &trans &trans &trans
-=======
 &trans           &trans           &trans           &trans                             &trans             &trans                     &trans         &trans              &trans        &trans            &trans                    &trans
 &kp ESCAPE       &kp Q            &kp W            &kp E                              &kp R              &kp T                      &kp Y          &kp U               &kp I         &kp O             &kp P                     &kp DELETE
 &mt TILDE GRAVE  &hrl LEFT_GUI A  &hrl LEFT_ALT S  &hrl LCTRL D                       &hrl LEFT_SHIFT F  &kp G                      &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K  &hrr RIGHT_ALT L  &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
 &trans           &kp Z            &kp X            &kp C                              &kp V              &kp B      &trans  &trans  &kp N          &kp M               &kp KP_COMMA  &kp KP_DOT        &trans                    &trans
                  &trans           &test_alt_tab    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &to 1              &kp SPACE                  &kp BACKSPACE  &mo 2               &trans        &trans            &trans
->>>>>>> parent of b815689 (Test smart show windows)
             >;
         };
 
