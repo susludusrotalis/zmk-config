@@ -175,7 +175,7 @@
 
         test_alt_tab: test_alt_tab {
             compatible = "zmk,behavior-macro";
-            binding-cells = <0>;
+            #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
                 <&kp LA(TAB)>,
@@ -184,13 +184,11 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&kp LEFT_ALT>;
-
-            label = "TEST_ALT_TAB";
         };
 
         show_windows_and_stick_nav_l: show_windows_and_stick_nav_l {
             compatible = "zmk,behavior-macro";
-            binding-cells = <0>;
+            #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
                 <&kp LA(TAB)>,
