@@ -12,8 +12,8 @@
 
         combo_under {
             timeout-ms = <65>;
-            bindings = <&kp UNDER>;
-            key-positions = <40 39>;
+            bindings = <&mt UNDER KP_MINUS>;
+            key-positions = <15 16>;
             require-prior-idle-ms = <300>;
         };
 
@@ -21,23 +21,16 @@
 
         combo_equals {
             timeout-ms = <65>;
-            bindings = <&kp EQUAL>;
-            key-positions = <>;
+            bindings = <&mt PLUS KP_EQUAL>;
+            key-positions = <19 20>;
             require-prior-idle-ms = <300>;
         };
 
         compatible = "zmk,combos";
 
-        combo_minus {
-            timeout-ms = <65>;
-            bindings = <&kp MINUS>;
-            key-positions = <>;
-            require-prior-idle-ms = <300>;
-        };
-
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <15 16>;
+            key-positions = <39 40>;
             timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
@@ -51,14 +44,14 @@
 
         left_par_or_lt {
             bindings = <&mt LESS_THAN LEFT_PARENTHESIS>;
-            key-positions = <30 31>;
+            key-positions = <>;
             timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
 
         right_par_or_gt {
             bindings = <&mt GREATER_THAN RIGHT_PARENTHESIS>;
-            key-positions = <32 31>;
+            key-positions = <>;
             require-prior-idle-ms = <300>;
             timeout-ms = <65>;
         };
@@ -83,6 +76,16 @@
             timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
+
+        eng_lang {
+            bindings = <&eng_lang>;
+            key-positions = <31 32>;
+        };
+
+        ru_lang {
+            bindings = <&ru_lang>;
+            key-positions = <27 28>;
+        };
     };
 
     behaviors {
@@ -90,7 +93,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <1>;                                // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS>;  // adjust as desired
+            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS KP_EQUAL KP_MINUS>;  // adjust as desired
             ignore-numbers;                                // numbers don't deactivate the layer
         };
 
@@ -154,6 +157,22 @@
             label = "ALT_TAB";
             #binding-cells = <0>;
             bindings = <&kp LA(TAB)>;
+        };
+
+        ru_lang: ru_lang {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RU_LANG";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LS(N9))>;
+            tapping-term-ms = <100>;
+        };
+
+        eng_lang: eng_lang {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENG_LANG";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp LS(LA(NUMBER_8))>;
         };
     };
 
