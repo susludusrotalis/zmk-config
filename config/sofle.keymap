@@ -299,9 +299,8 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp TAB &kp LEFT_ALT>,
-                <&macro_wait_time 50>,
-                <&macro_release>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
                 <&kp TAB>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
