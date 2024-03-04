@@ -177,19 +177,28 @@
             bindings = <&kp LS(LA(NUMBER_8))>;
         };
 
-        o_or_paren: o_or_paren {
+        i_or_paren: i_or_paren {
             compatible = "zmk,behavior-mod-morph";
-            label = "O_OR_PAREN";
+            label = "I_OR_PAREN";
             bindings = <&kp I>, <&kp LEFT_PARENTHESIS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
 
-        p_or_paren: p_or_paren {
+        o_or_paren: o_or_paren {
             compatible = "zmk,behavior-mod-morph";
-            label = "P_OR_PAREN";
-            bindings = <&kp P>, <&kp RIGHT_PARENTHESIS>;
+            label = "O_OR_PAREN";
+            bindings = <&kp O>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        k_or_curly: k_or_curly {
+            compatible = "zmk,behavior-mod-morph";
+            label = "K_OR_CURLY";
+            bindings = <&kp K>, <&kp LEFT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -198,16 +207,7 @@
         l_or_curly: l_or_curly {
             compatible = "zmk,behavior-mod-morph";
             label = "L_OR_CURLY";
-            bindings = <&kp L>, <&kp LEFT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
-
-        colon_or_curly: colon_or_curly {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COLON_OR_CURLY";
-            bindings = <&kp SEMI>, <&kp RIGHT_BRACE>;
+            bindings = <&kp L>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -229,6 +229,41 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
+        };
+
+        hrr_k: hrr_k {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&k_or_curly>;
+
+            hold-trigger-key-positions = <0 1 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53 54 2 3 4>;
+            require-prior-idle-ms = <350>;
+            label = "HRR_K";
+        };
+
+        hrr_l: hrr_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&l_or_curly>;
+
+            hold-trigger-key-positions = <0 1 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53 54 2 3 4>;
+            require-prior-idle-ms = <350>;
+            label = "HRR_L";
+        };
+
+        i_paren_asterisk: i_paren_asterisk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "I_PAREN_ASTERISK";
+            bindings = <&kp>, <&i_or_paren>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -296,11 +331,11 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans          &trans                  &trans                    &trans
-&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &mt ASTERISK I  &mt LEFT_PARENTHESIS O  &mt RIGHT_PARENTHESIS P   &kp LA(LEFT_BRACKET)
-&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K    &hrr RIGHT_ALT L        &hrr RIGHT_GUI SEMICOLON  &mt DOUBLE_QUOTES APOSTROPHE
-&trans           &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &kp COMMA       &kp DOT                 &kp SLASH                 &kp LEFT_BRACE
-                 &trans             &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                      &kp BACKSPACE  &mo 2               &trans          &trans                  &trans
+&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans                     &trans              &trans              &trans
+&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &i_paren_asterisk ASTRK 0  &o_or_paren         &kp P               &kp LEFT_BRACKET
+&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K               &hrr_k RIGHT_ALT 0  &hrr_l RIGHT_GUI 0  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &kp COMMA                  &kp DOT             &kp SLASH           &kp LEFT_BRACE
+                 &trans             &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                      &kp BACKSPACE  &mo 2               &trans                     &trans              &trans
             >;
         };
 
