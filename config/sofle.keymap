@@ -331,11 +331,11 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans                     &trans              &trans              &trans
-&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &i_paren_asterisk ASTRK 0  &o_or_paren         &kp P               &kp LEFT_BRACKET
-&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr RCTRL K               &hrr_k RIGHT_ALT 0  &hrr_l RIGHT_GUI 0  &mt DOUBLE_QUOTES APOSTROPHE
-&trans           &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &kp COMMA                  &kp DOT             &kp SLASH           &kp LEFT_BRACE
-                 &trans             &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                      &kp BACKSPACE  &mo 2               &trans                     &trans              &trans
+&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans                     &trans          &trans               &trans
+&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &i_paren_asterisk ASTRK 0  &o_or_paren     &kp P                &kp LEFT_BRACKET
+&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr_k K 0                 &hrr_l L 0      &hrr RIGHT_GUI SEMI  &mt DOUBLE_QUOTES APOSTROPHE
+&trans           &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &comma_lt_square           &dot_gt_square  &kp SLASH            &kp LEFT_BRACE
+                 &trans             &trans           &smart_show_windows 0 0  &smart_num 1 0     &kp SPACE                      &kp BACKSPACE  &mo 2               &trans                     &trans          &trans
             >;
         };
 
