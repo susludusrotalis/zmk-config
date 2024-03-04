@@ -86,6 +86,11 @@
             bindings = <&ru_lang>;
             key-positions = <27 28>;
         };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <40 41>;
+        };
     };
 
     behaviors {
