@@ -176,6 +176,60 @@
             tapping-term-ms = <100>;
             bindings = <&kp LS(LA(NUMBER_8))>;
         };
+
+        o_or_paren: o_or_paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "O_OR_PAREN";
+            bindings = <&kp I>, <&kp LEFT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        p_or_paren: p_or_paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "P_OR_PAREN";
+            bindings = <&kp P>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        l_or_curly: l_or_curly {
+            compatible = "zmk,behavior-mod-morph";
+            label = "L_OR_CURLY";
+            bindings = <&kp L>, <&kp LEFT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        colon_or_curly: colon_or_curly {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COLON_OR_CURLY";
+            bindings = <&kp SEMI>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        comma_lt_square: comma_lt_square {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_LT_SQUARE";
+            bindings = <&kp COMMA>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        dot_gt_square: dot_gt_square {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_GT_SQUARE";
+            bindings = <&kp DOT>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     conditional_layers {
