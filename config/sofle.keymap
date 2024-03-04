@@ -188,7 +188,7 @@
             bindings = <&kp I>, <&kp LEFT_PARENTHESIS>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         o_or_paren: o_or_paren {
@@ -197,7 +197,7 @@
             bindings = <&kp O>, <&kp RIGHT_PARENTHESIS>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         k_or_curly: k_or_curly {
@@ -206,7 +206,7 @@
             bindings = <&kp K>, <&kp LEFT_BRACE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         l_or_curly: l_or_curly {
@@ -215,7 +215,7 @@
             bindings = <&kp L>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         comma_lt_square: comma_lt_square {
@@ -224,7 +224,7 @@
             bindings = <&kp COMMA>, <&kp LEFT_BRACKET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         dot_gt_square: dot_gt_square {
@@ -233,7 +233,7 @@
             bindings = <&kp DOT>, <&kp RIGHT_BRACKET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LALT)>;
         };
 
         hrr_k: hrr_k {
