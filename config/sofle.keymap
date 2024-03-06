@@ -42,34 +42,6 @@
             require-prior-idle-ms = <300>;
         };
 
-        left_par_or_lt {
-            bindings = <&mt LESS_THAN LEFT_PARENTHESIS>;
-            key-positions = <>;
-            timeout-ms = <65>;
-            require-prior-idle-ms = <300>;
-        };
-
-        right_par_or_gt {
-            bindings = <&mt GREATER_THAN RIGHT_PARENTHESIS>;
-            key-positions = <>;
-            require-prior-idle-ms = <300>;
-            timeout-ms = <65>;
-        };
-
-        left_brace_or_bracket {
-            bindings = <&mt LEFT_BRACKET LEFT_BRACE>;
-            key-positions = <18 19>;
-            timeout-ms = <65>;
-            require-prior-idle-ms = <300>;
-        };
-
-        right_brace_or_bracket {
-            bindings = <&mt RIGHT_BRACKET RIGHT_BRACE>;
-            key-positions = <19 20>;
-            timeout-ms = <65>;
-            require-prior-idle-ms = <300>;
-        };
-
         slash_pipe {
             bindings = <&mt BACKSLASH KP_SLASH>;
             key-positions = <28 29>;
