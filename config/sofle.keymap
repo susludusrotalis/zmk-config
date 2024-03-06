@@ -21,7 +21,7 @@
 
         combo_equals {
             timeout-ms = <65>;
-            bindings = <&mt PLUS KP_EQUAL>;
+            bindings = <&mt PLUS EQUAL>;
             key-positions = <19 20>;
             require-prior-idle-ms = <300>;
         };
