@@ -21,7 +21,7 @@
 
         combo_equals {
             timeout-ms = <65>;
-            bindings = <&mt PLUS EQUAL>;
+            bindings = <&mt PLUS KP_EQUAL>;
             key-positions = <19 20>;
             require-prior-idle-ms = <300>;
         };
@@ -38,6 +38,34 @@
         combo_enter {
             bindings = <&kp RETURN>;
             key-positions = <45 46>;
+            timeout-ms = <65>;
+            require-prior-idle-ms = <300>;
+        };
+
+        left_par_or_lt {
+            bindings = <&mt LESS_THAN LEFT_PARENTHESIS>;
+            key-positions = <>;
+            timeout-ms = <65>;
+            require-prior-idle-ms = <300>;
+        };
+
+        right_par_or_gt {
+            bindings = <&mt GREATER_THAN RIGHT_PARENTHESIS>;
+            key-positions = <>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <65>;
+        };
+
+        left_brace_or_bracket {
+            bindings = <&mt LEFT_BRACKET LEFT_BRACE>;
+            key-positions = <18 19>;
+            timeout-ms = <65>;
+            require-prior-idle-ms = <300>;
+        };
+
+        right_brace_or_bracket {
+            bindings = <&mt RIGHT_BRACKET RIGHT_BRACE>;
+            key-positions = <19 20>;
             timeout-ms = <65>;
             require-prior-idle-ms = <300>;
         };
@@ -70,7 +98,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <1>;                                // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS KP_EQUAL KP_MINUS>;  // adjust as desired
+            continue-list = <BACKSPACE DELETE DOT COMMA LEFT_SHIFT RSHIFT EXCLAMATION AT_SIGN POUND PERCENT CARET AMPERSAND ASTERISK LEFT_PARENTHESIS RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS KP_EQUAL KP_MINUS EQUAL KP_EQUAL_AS400>;  // adjust as desired
             ignore-numbers;                                // numbers don't deactivate the layer
         };
 
