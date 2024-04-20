@@ -64,14 +64,14 @@
             key-positions = <40 41>;
         };
 
-        nav_layer {
-            bindings = <&mo 2>;
-            key-positions = <37 38>;
-        };
-
         switch_lang {
             bindings = <&kp LC(LEFT_SHIFT)>;
             key-positions = <28 27>;
+        };
+
+        ctrl+alt+del {
+            bindings = <&kp LC(RA(DELETE))>;
+            key-positions = <12 13>;
         };
     };
 
@@ -318,11 +318,11 @@
         layer_default_layer {
             label = "default_layer";
             bindings = <
-&trans              &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans                     &trans              &trans               &trans
-&kp ESCAPE          &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &i_paren_asterisk ASTRK 0  &o_or_paren         &kp P                &kp LEFT_BRACKET
-&mt TILDE GRAVE     &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr_k RCTRL 0             &hrr_l RIGHT_ALT 0  &hrr RIGHT_GUI SEMI  &mt DOUBLE_QUOTES APOSTROPHE
-&kp LC(LA(DELETE))  &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &comma_lt_square           &dot_gt_square      &kp SLASH            &kp LEFT_BRACE
-                    &trans             &trans           &smart_show_windows 0 0  &sk LS(LSHIFT)     &kp SPACE                      &kp BACKSPACE  &smart_num 1 0      &trans                     &trans              &trans
+&trans           &trans             &trans           &trans                   &trans             &trans                         &trans         &trans              &trans                     &trans              &trans               &trans
+&kp ESCAPE       &mt EXCLAMATION Q  &mt AT_SIGN W    &mt HASH E               &mt DOLLAR R       &mt PERCENT T                  &mt CARET Y    &mt AMPERSAND U     &i_paren_asterisk ASTRK 0  &o_or_paren         &kp P                &kp LEFT_BRACKET
+&mt TILDE GRAVE  &hrl LEFT_GUI A    &hrl LEFT_ALT S  &hrl LCTRL D             &hrl LEFT_SHIFT F  &kp G                          &kp H          &hrr RIGHT_SHIFT J  &hrr_k RCTRL 0             &hrr_l RIGHT_ALT 0  &hrr RIGHT_GUI SEMI  &mt DOUBLE_QUOTES APOSTROPHE
+&mo 2            &kp Z              &kp X            &kp C                    &kp V              &kp B          &trans  &trans  &kp N          &kp M               &comma_lt_square           &dot_gt_square      &kp SLASH            &kp LEFT_BRACE
+                 &trans             &trans           &smart_show_windows 0 0  &sk LS(LSHIFT)     &kp SPACE                      &kp BACKSPACE  &smart_num 1 0      &trans                     &trans              &trans
             >;
         };
 
@@ -333,7 +333,7 @@
 &trans  &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT NUMBER_5                  &mt CARET NUMBER_6  &mt AMPERSAND NUMBER_7  &mt ASTERISK NUMBER_8  &mt LEFT_PARENTHESIS NUMBER_9  &mt KP_NUMBER_0 NUMBER_0  &trans
 &trans  &trans                    &trans                &trans             &trans               &trans                                &trans              &trans                  &trans                 &trans                         &trans                    &trans
 &trans  &trans                    &trans                &trans             &trans               &trans                &trans  &trans  &trans              &trans                  &trans                 &trans                         &trans                    &trans
-        &trans                    &trans                &trans             &to 0                &trans                                &trans              &mo 2                   &trans                 &trans                         &trans
+        &trans                    &trans                &trans             &trans               &trans                                &trans              &trans                  &trans                 &trans                         &trans
             >;
         };
 
